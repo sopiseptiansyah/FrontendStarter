@@ -12,6 +12,7 @@
 @import "node_modules/@fortawesome/fontawesome-free/scss/regular";
 
 // Components
+@import "components/animate";
 @import "components/header";
 @import "components/footer";
 @import "components/grid";
@@ -19,6 +20,7 @@
 @import "components/page-header";
 @import "components/skeleton";
 @import "components/preloader";
+@import "components/button";
 
 // Pages
 @import "pages/landing";
