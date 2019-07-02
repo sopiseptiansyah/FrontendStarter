@@ -3,8 +3,10 @@
 
 // Bootstrap
 @import "bootstrap";
-@import "node_modules/owl.carousel/src/scss/owl.carousel";
-@import "node_modules/owl.carousel/src/scss/owl.theme.default";
+
+// Plugins
+@import "node_modules/slick-carousel/slick/slick.scss";
+@import "node_modules/slick-carousel/slick/slick-theme.scss";
 @import "node_modules/magnific-popup/src/css/main.scss";
 @import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
 @import "node_modules/@fortawesome/fontawesome-free/scss/solid";
@@ -12,7 +14,7 @@
 @import "node_modules/@fortawesome/fontawesome-free/scss/regular";
 
 // Components
-@import "components/animate";
+// @import "components/animate";
 @import "components/header";
 @import "components/footer";
 @import "components/grid";

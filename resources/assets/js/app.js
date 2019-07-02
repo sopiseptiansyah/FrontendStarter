@@ -1,100 +1,68 @@
 require('./bootstrap');
-require('owl.carousel');
-require('wowjs');
+require('intersection-observer');
+var LazyLoad = require('vanilla-lazyload');
+require('slick-carousel');
 require('magnific-popup');
 
 $(document).ready(function () {
-    
 
-    $('.nav-bars').click(function(){
-        $('.sidebar').toggleClass('active');
-    
+    // LazyLoad
+    var lazyLoadInstance = new LazyLoad({
+        elements_selector: "[data-src]"
+        // ... more custom settings?
     });
-    if ($(window).scrollTop()>=$('#home').position().top && $(window).scrollTop()<$('#aboutus').position().top) {
-        $('.sidebar .link a').removeClass('active');
-        $('.sidebar .link a[href="#home"]').addClass('active');
-    }else if($(window).scrollTop()>=$('#aboutus').position().top && $(window).scrollTop()<$('#services').position().top){
-        $('.sidebar .link a').removeClass('active');
-        $('.sidebar .link a[href="#aboutus"]').addClass('active');
-    }else if($(window).scrollTop()>=$('#services').position().top && $(window).scrollTop()<$('#ourwork').position().top){
-        $('.sidebar .link a').removeClass('active');
-        $('.sidebar .link a[href="#services"]').addClass('active');
-    }else if($(window).scrollTop()>=$('#ourwork').position().top && $(window).scrollTop()<$('#contact').position().top){
-        $('.sidebar .link a').removeClass('active');
-        $('.sidebar .link a[href="#ourwork"]').addClass('active');
-    }else if($(window).scrollTop()>=$('#contact').position().top){
-        // console.log('asd');
-        $('.sidebar .link a').removeClass('active');
-        $('.sidebar .link a[href="#contact"]').addClass('active');
+    
+    var lazyLoadInstancebg = new LazyLoad({
+    elements_selector: "[data-bg]",
+    // ... more custom settings?// Assign the callbacks defined above
+    });
+
+    if (lazyLoadInstance && lazyLoadInstancebg) {
+        lazyLoadInstance.update();
+        lazyLoadInstancebg.update();
     }
-    $(window).scroll(function(){
-        if ($(this).scrollTop()>=$('#home').position().top && $(this).scrollTop()<$('#aboutus').position().top) {
-            $('.sidebar .link a').removeClass('active');
-            $('.sidebar .link a[href="#home"]').addClass('active');
-        }else if($(this).scrollTop()>=$('#aboutus').position().top && $(this).scrollTop()<$('#services').position().top){
-            $('.sidebar .link a').removeClass('active');
-            $('.sidebar .link a[href="#aboutus"]').addClass('active');
-        }else if($(this).scrollTop()>=$('#services').position().top && $(this).scrollTop()<$('#ourwork').position().top){
-            $('.sidebar .link a').removeClass('active');
-            $('.sidebar .link a[href="#services"]').addClass('active');
-        }else if($(this).scrollTop()>=$('#ourwork').position().top && $(this).scrollTop()<$('#contact').position().top){
-            $('.sidebar .link a').removeClass('active');
-            $('.sidebar .link a[href="#ourwork"]').addClass('active');
-        }else if($(this).scrollTop()>=$('#contact').position().top){
-            // console.log('asd');
-            $('.sidebar .link a').removeClass('active');
-            $('.sidebar .link a[href="#contact"]').addClass('active');
-        }
-    });
-    $('.sidebar .link a').click(function(){
-        $('.sidebar .link a').removeClass('active');
-        $(this).addClass('active');
-        $('html,body').animate({
-            scrollTop:parseInt($($(this).attr('href')).position().top+80)
-        },1000,"swing");
-        // alert($($(this).attr('href')).position().top);
-        // alert($($(this).attr('href')).position().top);
-        // alert('asdasd');
-    });
+    // End Lazy Load
 
 
-    // Select all links with hashes
-$('a[href*="#"]')
-// Remove links that don't actually link to anything
-.not('[href="#"]')
-.not('[href="#0"]')
-.click(function(event) {
-  // On-page links
-  if (
-    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-    && 
-    location.hostname == this.hostname
-  ) {
-    // Figure out element to scroll to
-    var target = $(this.hash);
-    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-    // Does a scroll target exist?
-    if (target.length) {
-      // Only prevent default if animation is actually gonna happen
-      event.preventDefault();
-      $('html, body').animate({
-        scrollTop: target.offset().top
-      }, 1000, function() {
-        // Callback after animation
-        // Must change focus!
-        var $target = $(target);
-        $target.focus();
-        if ($target.is(":focus")) { // Checking if the target was focused
-          return false;
-        } else {
-          $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-          $target.focus(); // Set focus again
-        };
+    // Slick with lazyload
+    $('.slick--carousel').slick({
+        dots: true,
+        nav: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        lazyLoad: 'ondemand',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ]
       });
-    }
-  }
-});
-
+    //   End Slick
 
 
     // Magnific Popup
@@ -104,6 +72,7 @@ $('a[href*="#"]')
                 src: source
             },
             type: "iframe",
+            mainClass: 'mfp-with-fade',
             iframe: {
                 markup: '<div class="mfp-iframe-scaler">' +
                     '<div class="mfp-close"></div>' +

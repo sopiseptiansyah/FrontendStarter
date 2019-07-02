@@ -22,9 +22,11 @@ elixir(mix => {
        .webpack('app.js');
     // Resources Image
     mix.copy('resources/assets/img', 'public/img');
+    mix.copy('resources/assets/img/ajax-loader.gif', 'public/css');
     mix.copy('node_modules/@fortawesome/fontawesome-free/webfonts', 'public/webfonts');
     // Resources Font
        mix.copy('resources/assets/fonts', 'public/fonts');
+       mix.copy('resources/assets/fonts/slick', 'public/css/fonts');
     // browsersync live reload
     mix.browserSync({
     	proxy: false,

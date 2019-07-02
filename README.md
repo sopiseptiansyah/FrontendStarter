@@ -22,7 +22,7 @@ Download this Resources and follow the guide :
  - Bootstrap 4 ( https://getbootstrap.com/ )
  - jQuery
  - FontAwesome (https://fontawesome.com/)
- - Owl  Carousel ( https://owlcarousel2.github.io/OwlCarousel2/ ) *optional
+ - Slick Carousel (https://kenwheeler.github.io/slick/) *optional
  - Magnific Popup ( https://dimsemenov.com/plugins/magnific-popup/ )  *optional
  
 

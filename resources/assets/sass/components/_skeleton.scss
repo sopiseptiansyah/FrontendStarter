@@ -1,0 +1,22 @@
+.section__standard{
+    padding: 50px 0;
+}
+
+.green-dark{
+    background: #005005;   
+}
+.green-light{
+    background: #60ad5e;   
+}
+
+.slick--carousel{
+    .slick-list {
+        margin: 0 -10px;
+    }
+    .slick-slide {
+        margin: 0 10px;
+    }
+    img{
+        max-width: 100%;
+    }
+}
