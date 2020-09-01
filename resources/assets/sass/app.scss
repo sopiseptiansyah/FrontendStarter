@@ -7,22 +7,50 @@
 // Plugins
 @import "node_modules/slick-carousel/slick/slick.scss";
 @import "node_modules/slick-carousel/slick/slick-theme.scss";
-@import "node_modules/magnific-popup/src/css/main.scss";
-@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
-@import "node_modules/@fortawesome/fontawesome-free/scss/solid";
-@import "node_modules/@fortawesome/fontawesome-free/scss/brands";
-@import "node_modules/@fortawesome/fontawesome-free/scss/regular";
 
 // Components
 // @import "components/animate";
+@import "components/button";
+@import "components/utilities";
 @import "components/header";
 @import "components/footer";
-@import "components/grid";
-@import "components/hero-unit";
-@import "components/page-header";
-@import "components/skeleton";
-@import "components/preloader";
-@import "components/button";
+@import "components/carousel";
 
-// Pages
+// pages
 @import "pages/landing";
+@import "pages/product";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 16px;
+}
+// .slick-list {
+//   padding: 0 20% 0 0;
+// }
+.slick-slide {
+  outline: none;
+}
+.slick-navigation {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 10px 14px 34px rgba(22, 37, 61, 0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 10;
+  cursor: pointer;
+  &.arrow-prev {
+    left: 50px;
+  }
+  &.arrow-next {
+    right: 50px;
+  }
+}

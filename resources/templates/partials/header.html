@@ -1,35 +1,73 @@
-<nav class="navbar navbar-expand-lg navbar-dark navbar--custom green-dark">
-    <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
-        </div>
+<div class="navigation-dekstop">
+  <nav class="navbar navbar-expand-lg navbar__light container">
+    <a class="navbar-brand" href="/"><img data-src="./img/wecan-dark.svg" /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mx-2 active">
+          <a class="nav-link" href="/#how-it-work">How it work</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="/#design-sample">Design Samples</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="/#pricing">Pricing</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" href="/#accordion">FAQ</a>
+        </li>
+        <li class="nav-item ml-2">
+          <a class="d-flex button button__primary full text-white" href="#"
+            >Schedule On-Boarding</a
+          >
+        </li>
+      </ul>
     </div>
-</nav>
+  </nav>
+  
+</div>
+<div class="navbar-mobile">
+  <div>
+      <input type="checkbox" id="navi-toggle" class="checkbox" />
+      <label for="navi-toggle" class="nav-button" id="open">
+          <span class="nav-icon"><span></span></span>
+      </label>
+      <div class="background">&nbsp;</div>
+      <div id="logo-mobile"><a class="navbar-brand logo
+          href="/"><img class="no-async" src="/img/wecan-dark.svg" alt="WeCan"></a></div>
+      <nav class="navigation-mobile">
+          <ul class="navbar-nav list">
+              <li class="item">
+                  <a class="link" id="link5" href="/#how-it-work">How it work</a>
+              </li>
+              <li class="item">
+                  <a class="link" id="link1" href="/#design-sample">Design Samples</a>
+              </li>
+              <li class="item">
+                  <a class="link" id="link2" href="/#pricing">Pricing</a>
+              </li>
+              <li class="item">
+                  <a class="link" id="link3" href="/#qna">FAQ</a>
+              </li>
+              <li class="item">
+                <div class="link mt-3">
+                  <a id="link4" class="d-flex button button__primary full text-white" href="#">Schedule On-Boarding</a
+                </div>
+              </li>
+          </ul>
+
+      </nav>
+  </div>
+
+  <!-- nav -->
+</div>
