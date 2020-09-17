@@ -1,14 +1,42 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
 // Typography
-$font-family-sans-serif: "Roboto", sans-serif;
-$font-monstserrat: "Montserrat", sans-serif;
+$font-family-sans-serif: "Open Sans", sans-serif;
 $font-size-base: 1rem;
 $line-height-base: 1.6;
 $text-color: #666;
 
-$green-gradient-bg: linear-gradient(229.08deg, #9dcd12 1.93%, #7bcb2a 98.31%);
-$blue-gradient-bg: linear-gradient(219.61deg, #147EE3 0%, #2A7ECB 100%);
-$red-gradient-bg: linear-gradient(219.61deg, #EF3B2D 0%, #CB342A 100%);
+// Colors
+$color-default: #ebebeb;
+$color-default-inverse: #777;
+
+$color-muted: #999;
+
+$color-primary: #53b577;
+$color-primary-inverse: #FFF;
+
+$color-secondary: #E36159;
+$color-secondary-inverse: #FFF;
+
+$color-success: #47a447;
+$color-success-inverse: #FFF;
+
+$color-info: #5bc0de;
+$color-info-inverse: #FFF;
+
+$color-warning: #ed9c28;
+$color-warning-inverse: #FFF;
+
+$color-danger: #d2322d;
+$color-danger-inverse: #FFF;
+
+// Header
+$header-height: 80px;
+$header-text-color: #ccc;
+$header-font-size: 18px;
+
+
+// Include Specific Modules
+@import "mixins";
+@import "maps";
